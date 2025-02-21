@@ -77,7 +77,8 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = '» ',
+  -- tab = '» ',
+  tab = '▏ ',
   trail = '·',
   nbsp = '␣',
 }
@@ -942,6 +943,13 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>t', ':normal gcc<CR>', { desc = '[T]oggle comment line' })
       vim.keymap.set('v', '<leader>t', '<Esc>:normal gvgc<CR>', { desc = '[T]oggle comment block' })
     end,
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
   },
 
   --  Here are some example plugins that I've included in the Kickstart repository.
