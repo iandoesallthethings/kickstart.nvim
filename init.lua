@@ -830,32 +830,13 @@ require('lazy').setup({
     priority = 1000, -- Load this first
     config = function()
       require('vscode').setup {
-        styles = {
-          comments = {
-            italic = true,
-          },
-        },
+        transparent = true,
+        italic_comments = true,
       }
 
       vim.cmd.colorscheme 'vscode'
     end,
   },
-
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   config = function()
-  --     ---@diagnostic disable-next-line: missing-fields
-  --     require('tokyonight').setup {
-  --       styles = {
-  --         comments = {
-  --           -- italic = false
-  --         }, -- Disable italics in comments
-  --       },
-  --     }
-  --     vim.cmd.colorscheme 'vscode'
-  --   end,
-  -- },
 
   { -- Highlight todo, notes, etc in comments
     'folke/todo-comments.nvim',
