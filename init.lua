@@ -11,7 +11,7 @@
 ========         |'-..................-'|   |____o|          ========
 ========         `"")----------------(""`   ___________      ========
 ========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========init
+========       /:::========|  |==hjkl==:::\  \ required \    ========
 ========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
 ========                                                     ========
 =====================================================================
@@ -66,7 +66,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 1000
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -859,6 +859,10 @@ require('lazy').setup({
       require('mini.ai').setup {
         n_lines = 500,
       }
+
+      -- Unmap regular s so it doesn't hijack surround
+      -- Also, change timeoutlen
+      vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
